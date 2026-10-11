@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flystone Interiors | Luxury Living, Thoughtfully Designed</title>
+    <meta name="description" content="Premier interior design company in Hyderabad serving Telangana, Andhra Pradesh, and Karnataka. Turnkey luxury interiors, modular kitchens, and custom living spaces.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        stone: {
+                            850: '#1c1917',
+                            900: '#141210',
+                            950: '#0c0a09'
+                        },
+                        gold: {
+                            300: '#fde047',
+                            400: '#eab308',
+                            500: '#d4af37',
+                            600: '#c59b27',
+                            700: '#a17c1b'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0c0a09;
+            color: #f5f5f4;
+            overflow-x: hidden;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #fef08a 0%, #d4af37 50%, #996515 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-glow:hover {
+            box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.35);
+        }
+        .glass-nav {
+            background: rgba(12, 10, 9, 0.85);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+        .glass-card {
+            background: rgba(28, 25, 23, 0.65);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0c0a09;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #292524;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4af37;
+        }
+    </style>
+</head>
+<body class="selection:bg-amber-500 selection:text-black">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-stone-900 via-neutral-900 to-stone-900 border-b border-gold-500/20 text-xs py-2 px-4 text-stone-300">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-4 flex-wrap justify-center">
+                <span class="inline-flex items-center text-amber-300 font-medium">
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5 mr-1 text-gold-500"></i> Serving Telangana, Andhra Pradesh &amp; Karnataka
+                </span>
+                <span class="hidden md:inline text-stone-600">•</span>
+                <span class="flex items-center gap-2">
+                    <i data-lucide="phone-call" class="w-3.5 h-3.5 text-gold-500"></i>
+                    <a href="tel:+919962458144" class="hover:text-gold-400 transition">+91 99624 58144</a> / 
+                    <a href="tel:+919908732206" class="hover:text-gold-400 transition">+91 99087 32206</a>
+                </span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="mailto:info@flystoneinteriors.com" class="hover:text-gold-400 flex items-center gap-1 transition">
+                    <i data-lucide="mail" class="w-3.5 h-3.5 text-gold-500"></i> info@flystoneinteriors.com
+                </a>
+                <span class="text-stone-600">|</span>
+                <button onclick="openAdminModal()" class="text-amber-400/90 hover:text-amber-300 flex items-center gap-1 transition text-xs font-semibold">
+                    <i data-lucide="lock" class="w-3 h-3"></i> Designer Portal
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Main Navigation -->
+    <nav class="sticky top-0 z-40 glass-nav border-b border-stone-800 transition-all duration-300" id="mainNav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#hero" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-lg bg-gradient-to-tr from-stone-900 to-amber-950/60 border border-gold-500/40 flex items-center justify-center text-gold-500 shadow-lg group-hover:border-gold-400 transition">
+                        <i data-lucide="gem" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <div class="font-serif text-2xl font-bold tracking-wider text-white">
+                            FLYSTONE <span class="text-gold-500 font-light text-xl">INTERIORS</span>
+                        </div>
+                        <p class="text-[10px] tracking-widest uppercase text-stone-400">Hyderabad • Bengaluru • Vizag</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden lg:flex items-center space-x-7 text-sm font-medium">
+                    <a href="#about" class="text-stone-300 hover:text-gold-400 transition">About</a>
+                    <a href="#services" class="text-stone-300 hover:text-gold-400 transition">Services</a>
+                    <a href="#portfolio" class="text-stone-300 hover:text-gold-400 transition">Portfolio</a>
+                    <a href="#estimator" class="text-stone-300 hover:text-gold-400 transition">Cost Estimator</a>
+                    <a href="#locations" class="text-stone-300 hover:text-gold-400 transition">Locations</a>
+                    <a href="#contact" class="text-stone-300 hover:text-gold-400 transition">Contact</a>
+                </div>
+
+                <!-- Call to Action Buttons -->
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="https://wa.me/919962458144?text=Hi%20Flystone%20Interiors,%20I%20would%20like%20to%20enquire%20about%20interior%20design%20services." target="_blank" class="px-4 py-2 rounded-full border border-stone-700 bg-stone-900/60 hover:bg-stone-800 text-stone-200 text-xs font-semibold flex items-center gap-2 transition">
+                        <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i> WhatsApp
+                    </a>
+                    <a href="#contact" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-gold-600 to-gold-500 hover:from-gold-500 hover:to-gold-400 text-stone-950 font-semibold text-xs tracking-wide uppercase transition shadow-md shadow-gold-500/20">
+                        Book Consultation
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="mobileMenuBtn" aria-label="Toggle menu" class="p-2 text-stone-400 hover:text-white focus:outline-none">
+                        <i data-lucide="menu" id="menuIcon" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Navigation -->
+        <div id="mobileMenu" class="hidden lg:hidden px-4 pt-2 pb-6 bg-stone-950 border-b border-stone-800 space-y-3">
+            <a href="#about" class="block py-2 text-stone-300 hover:text-gold-400">About Flystone</a>
+            <a href="#services" class="block py-2 text-stone-300 hover:text-gold-400">Services</a>
+            <a href="#portfolio" class="block py-2 text-stone-300 hover:text-gold-400">Portfolio Gallery</a>
+            <a href="#estimator" class="block py-2 text-stone-300 hover:text-gold-400">Instant Cost Estimator</a>
+            <a href="#locations" class="block py-2 text-stone-300 hover:text-gold-400">Our Branches</a>
+            <a href="#contact" class="block py-2 text-stone-300 hover:text-gold-400">Contact Us</a>
+            <div class="pt-4 flex flex-col gap-2">
+                <a href="#contact" class="w-full text-center py-3 rounded-lg bg-gold-500 text-stone-950 font-bold text-sm">
+                    Book Free Consultation
+                </a>
+                <button onclick="openAdminModal()" class="w-full text-center py-2.5 rounded-lg border border-gold-500/40 text-gold-400 text-sm">
+                    Upload Photos (Designer Portal)
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero" class="relative min-h-[92vh] flex items-center justify-center overflow-hidden">
+        <!-- Hero Background Slider Simulation with overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=2000&q=80" alt="Luxury Interior by Flystone Interiors" class="w-full h-full object-cover scale-105 filter brightness-40 transition-transform duration-1000 ease-out" id="heroImage">
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/70 to-stone-950/40"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#0c0a09_85%)]"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold-500/30 bg-stone-900/80 backdrop-blur-md mb-6">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span class="text-xs font-semibold tracking-wider uppercase text-amber-200">500+ Luxury Homes Delivered Across TS • AP • KA</span>
+            </div>
+
+            <!-- Heading -->
+            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight max-w-5xl mx-auto">
+                Luxury Living, <br>
+                <span class="gold-gradient-text italic font-normal">Thoughtfully Designed.</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-stone-300 text-base sm:text-lg mb-10 font-light leading-relaxed">
+                Hyderabad's trusted bespoke interior studio. We turn residential villas, penthouses, and commercial workplaces into timeless living sanctuaries across Telangana, Andhra Pradesh, and Karnataka.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+                <a href="#estimator" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-gold-600 via-gold-500 to-amber-400 hover:from-gold-500 hover:to-amber-300 text-stone-950 font-bold text-sm tracking-wide uppercase transition shadow-xl shadow-gold-500/25 flex items-center justify-center gap-2 group">
+                    <i data-lucide="calculator" class="w-4 h-4 text-stone-950 transition-transform group-hover:scale-110"></i> Calculate Interior Cost
+                </a>
+                <a href="#portfolio" class="w-full sm:w-auto px-8 py-4 rounded-xl border border-stone-600 bg-stone-900/80 hover:bg-stone-800 text-stone-100 font-semibold text-sm transition flex items-center justify-center gap-2 backdrop-blur-md">
+                    <i data-lucide="eye" class="w-4 h-4 text-gold-400"></i> Explore Projects
+                </a>
+            </div>
+
+            <!-- Quick Trust Metrics -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-16 max-w-4xl mx-auto pt-8 border-t border-stone-800/80">
+                <div class="text-center p-3">
+                    <div class="font-serif text-2xl sm:text-3xl font-bold text-white">45 Days</div>
+                    <div class="text-xs text-stone-400 mt-1 uppercase tracking-wider">Turnaround Delivery</div>
+                </div>
+                <div class="text-center p-3">
+                    <div class="font-serif text-2xl sm:text-3xl font-bold text-white">10 Years</div>
+                    <div class="text-xs text-stone-400 mt-1 uppercase tracking-wider">Material Warranty</div>
+                </div>
+                <div class="text-center p-3">
+                    <div class="font-serif text-2xl sm:text-3xl font-bold text-white">100%</div>
+                    <div class="text-xs text-stone-400 mt-1 uppercase tracking-wider">Transparent Pricing</div>
+                </div>
+                <div class="text-center p-3">
+                    <div class="font-serif text-2xl sm:text-3xl font-bold text-white">3 States</div>
+                    <div class="text-xs text-stone-400 mt-1 uppercase tracking-wider">South India Reach</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-24 bg-stone-900/60 border-t border-b border-stone-800/60 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                <!-- Left Visual Showcase -->
+                <div class="relative">
+                    <div class="relative z-10 rounded-2xl overflow-hidden border border-stone-700/60 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80" alt="Flystone Living Room Design" class="w-full h-[450px] object-cover hover:scale-105 transition duration-700">
+                    </div>
+                    <!-- Overlaid Stats Card -->
+                    <div class="absolute -bottom-6 -right-4 sm:right-6 z-20 glass-card p-6 rounded-xl border border-gold-500/40 shadow-xl max-w-xs">
+                        <div class="flex items-center gap-3 mb-2">
+                            <div class="p-2.5 rounded-lg bg-gold-500/20 text-gold-400">
+                                <i data-lucide="award" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif text-xl font-bold text-white">Excellence</h4>
+                                <p class="text-xs text-stone-400">In Architectural Craft</p>
+                            </div>
+                        </div>
+                        <p class="text-xs text-stone-300 leading-relaxed">
+                            Crafting precision joinery and European hardware fittings tested for durability in Indian climatic conditions.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Narrative -->
+                <div>
+                    <div class="inline-flex items-center gap-2 text-xs font-semibold text-gold-500 uppercase tracking-widest mb-3">
+                        <span class="w-8 h-[1px] bg-gold-500"></span> About Flystone Interiors
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mb-6 leading-tight">
+                        Transforming Blank Spaces into <span class="italic text-gold-400">Masterpieces</span>
+                    </h2>
+                    <p class="text-stone-300 text-sm sm:text-base leading-relaxed mb-6">
+                        Headquartered at **Krishe Emerald, Kondapur, Hyderabad**, Flystone Interiors has grown into one of South India's premier turnkey design consultancies. Whether it is an expansive duplex villa in Hyderabad, a contemporary apartment in Bengaluru, or a beachfront home in Visakhapatnam, we infuse every corner with balance, elegance, and function.
+                    </p>
+                    <p class="text-stone-400 text-sm leading-relaxed mb-8">
+                        Our integrated process handles architectural 3D conceptualization, structural interior execution, custom Italian-style modular kitchens, and handcrafted furniture, ensuring seamless handover without budget deviations.
+                    </p>
+
+                    <!-- Feature Bullet Points -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-start gap-3">
+                            <div class="p-2 rounded-lg bg-stone-800 text-gold-400 shrink-0">
+                                <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white text-sm font-semibold">In-house Manufacturing</h4>
+                                <p class="text-xs text-stone-400">German precision edge-banding &amp; factory finishes.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="p-2 rounded-lg bg-stone-800 text-gold-400 shrink-0">
+                                <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white text-sm font-semibold">Direct Designer Access</h4>
+                                <p class="text-xs text-stone-400">Dedicated lead architect for each project.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="p-2 rounded-lg bg-stone-800 text-gold-400 shrink-0">
+                                <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white text-sm font-semibold">Certified Quality</h4>
+                                <p class="text-xs text-stone-400">BWP Marine Grade Plywood &amp; Hettich/Hafele hardware.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="p-2 rounded-lg bg-stone-800 text-gold-400 shrink-0">
+                                <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white text-sm font-semibold">On-Time Penalty Guarantee</h4>
+                                <p class="text-xs text-stone-400">We compensate if delivery exceeds agreed milestones.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Services Section -->
+    <section id="services" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-semibold text-gold-500 uppercase tracking-widest">Our Expertise</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2 mb-4">Complete Turnkey Solutions</h2>
+                <p class="text-stone-400 text-sm sm:text-base">From conceptual mood boards to turnkey handover, explore our comprehensive end-to-end design services tailored for modern lifestyles.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="glass-card rounded-2xl p-7 border border-stone-800 hover:border-gold-500/40 transition duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-stone-900 border border-stone-700 flex items-center justify-center text-gold-400 mb-6 group-hover:bg-gold-500 group-hover:text-stone-950 transition">
+                        <i data-lucide="chef-hat" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-2 group-hover:text-gold-400 transition">Modular Kitchens</h3>
+                    <p class="text-stone-400 text-xs sm:text-sm leading-relaxed mb-4">
+                        Ergonomic Island, L-Shape &amp; Parallel kitchens crafted with acrylic, PU finishes, quartz countertops, and Blum soft-close fittings.
+                    </p>
+                    <ul class="text-xs text-stone-400 space-y-1.5 border-t border-stone-800/80 pt-4">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-500"></i> Boiling Water Resistant Plywood</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-500"></i> Integrated Tall Units &amp; Pantries</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="glass-card rounded-2xl p-7 border border-stone-800 hover:border-gold-500/40 transition duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-stone-900 border border-stone-700 flex items-center justify-center text-gold-400 mb-6 group-hover:bg-gold-500 group-hover:text-stone-950 transition">
+                        <i data-lucide="sofa" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-2 group-hover:text-gold-400 transition">Luxury Living &amp; Dining</h3>
+                    <p class="text-stone-400 text-xs sm:text-sm leading-relaxed mb-4">
+                        Acoustic wall paneling, Italian marble flooring integration, custom TV consoles, ambient cove lighting, and false ceiling designs.
+                    </p>
+                    <ul class="text-xs text-stone-400 space-y-1.5 border-t border-stone-800/80 pt-4">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-500"></i> Statement CNC &amp; Fluted Louvers</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-500"></i> Custom Chandelier Framing</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="glass-card rounded-2xl p-7 border border-stone-800 hover:border-gold-500/40 transition duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-stone-900 border border-stone-700 flex items-center justify-center text-gold-400 mb-6 group-hover:bg-gold-500 group-hover:text-stone-950 transition">
+                        <i data-lucide="bed-double" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-2 group-hover:text-gold-400 transition">Master Suites &amp; Wardrobes</h3>
+                    <p class="text-stone-400 text-xs sm:text-sm leading-relaxed mb-4">
+                        Walk-in closets with tinted fluted glass, sensor profile lights, leatherette headboard paneling, and private dresser suites.
+                    </p>
+                    <ul class="text-xs text-stone-400 space-y-1.5 border-t border-stone-800/80 pt-4">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-500"></i> Floor-to-Ceiling Sliding Systems</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-500"></i> Integrated Valet &amp; Jewelry Organizers</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="glass-card rounded-2xl p-7 border border-stone-800 hover:border-gold-500/40 transition duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-stone-900 border border-stone-700 flex items-center justify-center text-gold-400 mb-6 group-hover:bg-gold-500 group-hover:text-stone-950 transition">
+                        <i data-lucide="briefcase" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-2 group-hover:text-gold-400 transition">Commercial &amp; Offices</h3>
+                    <p class="text-stone-400 text-xs sm:text-sm leading-relaxed mb-4">
+                        Boutique offices, tech startup spaces, executive boardrooms, and retail showrooms designed for productivity and modern branding.
+                    </p>
+                    <ul class="text-xs text-stone-400 space-y-1.5 border-t border-stone-800/80 pt-4">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-500"></i> Acoustic Glass Partitions</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-500"></i> Smart Access &amp; Ergonomic Workstations</li>
+                    </ul>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="glass-card rounded-2xl p-7 border border-stone-800 hover:border-gold-500/40 transition duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-stone-900 border border-stone-700 flex items-center justify-center text-gold-400 mb-6 group-hover:bg-gold-500 group-hover:text-stone-950 transition">
+                        <i data-lucide="glasses" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-2 group-hover:text-gold-400 transition">3D Photorealistic VR Tour</h3>
+                    <p class="text-stone-400 text-xs sm:text-sm leading-relaxed mb-4">
+                        Experience your dream home before spending a rupee on execution with our high-definition 3D renders and virtual walkthroughs.
+                    </p>
+                    <ul class="text-xs text-stone-400 space-y-1.5 border-t border-stone-800/80 pt-4">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-500"></i> Real Lighting &amp; Texture Simulation</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-500"></i> Unlimited Material Iterations</li>
+                    </ul>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="glass-card rounded-2xl p-7 border border-stone-800 hover:border-gold-500/40 transition duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-stone-900 border border-stone-700 flex items-center justify-center text-gold-400 mb-6 group-hover:bg-gold-500 group-hover:text-stone-950 transition">
+                        <i data-lucide="sparkles" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-2 group-hover:text-gold-400 transition">Turnkey Site Execution</h3>
+                    <p class="text-stone-400 text-xs sm:text-sm leading-relaxed mb-4">
+                        Comprehensive civil alterations, plumbing, electrical redesign, false ceiling, painting, wallpapering, and deep cleaning.
+                    </p>
+                    <ul class="text-xs text-stone-400 space-y-1.5 border-t border-stone-800/80 pt-4">
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-500"></i> Dedicated Site Project Manager</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-gold-500"></i> Weekly Digital Video Progress Updates</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Portfolio & Gallery Section -->
+    <section id="portfolio" class="py-24 bg-stone-900/40 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <span class="text-xs font-semibold text-gold-500 uppercase tracking-widest">Selected Works</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2">Delivered Projects</h2>
+                    <p class="text-stone-400 text-sm mt-2 max-w-xl">
+                        Browse real verified sites completed by Flystone Interiors across Hyderabad, Bengaluru, and Andhra Pradesh.
+                    </p>
+                </div>
+                <!-- Designer Upload Action -->
+                <div class="flex items-center gap-3">
+                    <button onclick="openAdminModal()" class="px-4 py-2.5 rounded-lg border border-gold-500/50 bg-stone-900 hover:bg-stone-800 text-gold-400 hover:text-gold-300 text-xs font-semibold flex items-center gap-2 transition">
+                        <i data-lucide="upload-cloud" class="w-4 h-4"></i> Add Site Photo (Team Portal)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Category Filter Buttons -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar text-xs">
+                <button onclick="filterGallery('All')" class="filter-btn active-filter px-5 py-2 rounded-full border border-gold-500 bg-gold-500 text-stone-950 font-bold transition whitespace-nowrap" data-cat="All">All Projects</button>
+                <button onclick="filterGallery('Kitchen')" class="filter-btn px-5 py-2 rounded-full border border-stone-800 bg-stone-900 text-stone-300 hover:border-gold-500/50 transition whitespace-nowrap" data-cat="Kitchen">Modular Kitchens</button>
+                <button onclick="filterGallery('Living')" class="filter-btn px-5 py-2 rounded-full border border-stone-800 bg-stone-900 text-stone-300 hover:border-gold-500/50 transition whitespace-nowrap" data-cat="Living">Living &amp; Dining</button>
+                <button onclick="filterGallery('Bedroom')" class="filter-btn px-5 py-2 rounded-full border border-stone-800 bg-stone-900 text-stone-300 hover:border-gold-500/50 transition whitespace-nowrap" data-cat="Bedroom">Bedrooms</button>
+                <button onclick="filterGallery('Commercial')" class="filter-btn px-5 py-2 rounded-full border border-stone-800 bg-stone-900 text-stone-300 hover:border-gold-500/50 transition whitespace-nowrap" data-cat="Commercial">Offices &amp; Commercial</button>
+            </div>
+
+            <!-- Dynamic Project Grid -->
+            <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Injected via JavaScript from LocalStorage & Defaults -->
+            </div>
+
+            <!-- Video Reel Showcase Bar -->
+            <div class="mt-14 glass-card p-6 sm:p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 border border-gold-500/20">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-red-600/20 text-red-500 flex items-center justify-center shrink-0">
+                        <i data-lucide="youtube" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-serif text-lg font-bold text-white">Watch Site Walkthroughs on YouTube</h4>
+                        <p class="text-xs text-stone-400">See 4K home walkthroughs, material durability tests, and client reviews on our official channel.</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 w-full md:w-auto">
+                    <a href="https://youtube.com/@flystoneinteriors?si=a5jMoUxCQW7ZdsVh" target="_blank" rel="noopener noreferrer" class="w-full md:w-auto text-center px-6 py-2.5 rounded-lg bg-red-600 hover:bg-red-700 text-white font-semibold text-xs transition flex items-center justify-center gap-2">
+                        <i data-lucide="play" class="w-3.5 h-3.5 fill-current"></i> Visit YouTube Channel
+                    </a>
+                    <a href="https://www.instagram.com/flystoneinteriors" target="_blank" rel="noopener noreferrer" class="w-full md:w-auto text-center px-6 py-2.5 rounded-lg bg-stone-800 hover:bg-stone-700 text-stone-200 font-semibold text-xs transition flex items-center justify-center gap-2 border border-stone-700">
+                        <i data-lucide="instagram" class="w-3.5 h-3.5 text-pink-400"></i> Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Cost Estimator Section -->
+    <section id="estimator" class="py-24 bg-stone-950 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-xs font-semibold text-gold-500 uppercase tracking-widest">Instant Planning</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2">Interior Cost Calculator</h2>
+                <p class="text-stone-400 text-sm mt-2">Get a transparent, real-time budget estimate for your property in Telangana, AP, or Karnataka.</p>
+            </div>
+
+            <div class="glass-card rounded-3xl p-6 sm:p-10 border border-gold-500/30 shadow-2xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <!-- Left: Options Selection -->
+                    <div class="space-y-6">
+                        <!-- Step 1: Configuration -->
+                        <div>
+                            <label class="block text-xs font-semibold text-stone-300 uppercase tracking-wider mb-2.5">
+                                1. Select Home / Space Type
+                            </label>
+                            <div class="grid grid-cols-3 gap-2 text-xs">
+                                <button type="button" onclick="selectConfig('2BHK', 1)" class="config-btn border border-gold-500 bg-gold-500/10 text-gold-400 p-3 rounded-xl font-medium text-center">2 BHK<br><span class="text-[10px] text-stone-400">800-1100 sft</span></button>
+                                <button type="button" onclick="selectConfig('3BHK', 1.45)" class="config-btn border border-stone-800 bg-stone-900 text-stone-300 p-3 rounded-xl font-medium text-center hover:border-stone-700">3 BHK<br><span class="text-[10px] text-stone-400">1200-1700 sft</span></button>
+                                <button type="button" onclick="selectConfig('4BHK / Villa', 2.1)" class="config-btn border border-stone-800 bg-stone-900 text-stone-300 p-3 rounded-xl font-medium text-center hover:border-stone-700">Villa / 4BHK<br><span class="text-[10px] text-stone-400">2200+ sft</span></button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Quality Tier -->
+                        <div>
+                            <label class="block text-xs font-semibold text-stone-300 uppercase tracking-wider mb-2.5">
+                                2. Select Finish &amp; Material Grade
+                            </label>
+                            <div class="space-y-2">
+                                <label class="flex items-center justify-between p-3.5 rounded-xl border border-gold-500/40 bg-stone-900 cursor-pointer tier-radio-box">
+                                    <div class="flex items-center gap-3">
+                                        <input type="radio" name="finishTier" value="essential" checked onchange="calculateBudget()" class="accent-amber-500">
+                                        <div>
+                                            <p class="text-sm font-semibold text-white">Flystone Classic (Essential)</p>
+                                            <p class="text-xs text-stone-400">Commercial MR Plywood + High Gloss Laminates + Premium Hardware</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs text-stone-400 font-mono">Standard</span>
+                                </label>
+
+                                <label class="flex items-center justify-between p-3.5 rounded-xl border border-stone-800 bg-stone-900 cursor-pointer tier-radio-box hover:border-stone-700">
+                                    <div class="flex items-center gap-3">
+                                        <input type="radio" name="finishTier" value="premium" onchange="calculateBudget()" class="accent-amber-500">
+                                        <div>
+                                            <p class="text-sm font-semibold text-white">Flystone Elite (Most Popular)</p>
+                                            <p class="text-xs text-stone-400">BWP Marine Ply + Acrylic / PU finish + Blum/Hettich Soft Close</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs text-gold-400 font-mono">+ 30%</span>
+                                </label>
+
+                                <label class="flex items-center justify-between p-3.5 rounded-xl border border-stone-800 bg-stone-900 cursor-pointer tier-radio-box hover:border-stone-700">
+                                    <div class="flex items-center gap-3">
+                                        <input type="radio" name="finishTier" value="luxury" onchange="calculateBudget()" class="accent-amber-500">
+                                        <div>
+                                            <p class="text-sm font-semibold text-white">Flystone Royal (Ultra Luxury)</p>
+                                            <p class="text-xs text-stone-400">Veneer Polish + Tinted Glass Wardrobes + Smart Automation + Quartz</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs text-gold-400 font-mono">+ 65%</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Location -->
+                        <div>
+                            <label class="block text-xs font-semibold text-stone-300 uppercase tracking-wider mb-2">
+                                3. City / Region
+                            </label>
+                            <select id="estimatorCity" onchange="calculateBudget()" class="w-full bg-stone-900 border border-stone-800 rounded-xl px-4 py-3 text-sm text-stone-200 focus:outline-none focus:border-gold-500">
+                                <option value="Hyderabad">Telangana - Hyderabad / Secunderabad</option>
+                                <option value="Bengaluru">Karnataka - Bengaluru</option>
+                                <option value="Visakhapatnam">Andhra Pradesh - Visakhapatnam</option>
+                                <option value="Vijayawada">Andhra Pradesh - Vijayawada / Guntur</option>
+                                <option value="Other">Other Region (TS/AP/KA)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Right: Dynamic Price Display -->
+                    <div class="bg-gradient-to-b from-stone-900 to-stone-950 p-6 sm:p-8 rounded-2xl border border-stone-800 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[11px] uppercase tracking-widest text-gold-400 font-bold">Estimated Investment Range</span>
+                            <div class="mt-4">
+                                <span class="font-serif text-3xl sm:text-5xl font-extrabold text-white" id="estimateOutput">₹4.8L - ₹6.2L</span>
+                                <span class="text-xs text-stone-400 block mt-1">*Excluding GST, Includes Design &amp; Complete Execution</span>
+                            </div>
+
+                            <div class="mt-8 space-y-3 text-xs text-stone-300 border-t border-stone-800 pt-6">
+                                <div class="flex items-center justify-between">
+                                    <span>Selected Configuration:</span>
+                                    <span class="font-semibold text-white" id="summaryConfig">2 BHK</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span>Finish Tier:</span>
+                                    <span class="font-semibold text-amber-300" id="summaryTier">Flystone Classic</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span>Turnaround Target:</span>
+                                    <span class="font-semibold text-white">45 Days Handover</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span>3D VR Walkthrough:</span>
+                                    <span class="font-semibold text-emerald-400">Included (Free)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8">
+                            <button onclick="applyEstimateToInquiry()" class="w-full py-4 rounded-xl bg-gold-500 hover:bg-gold-400 text-stone-950 font-bold text-xs tracking-wider uppercase transition flex items-center justify-center gap-2 shadow-lg shadow-gold-500/20">
+                                Lock In This Estimate &amp; Consult <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                            <p class="text-[10px] text-stone-500 text-center mt-2">Zero obligation free site measurement visit included.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations & Operational States Section -->
+    <section id="locations" class="py-24 bg-stone-900/60 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-semibold text-gold-500 uppercase tracking-widest">Our Presence</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mt-2">Serving 3 South Indian States</h2>
+                <p class="text-stone-400 text-sm mt-2">With our headquarters at Hyderabad's IT corridor and active execution teams throughout Telangana, Andhra Pradesh, and Karnataka.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Location 1: Telangana (HQ) -->
+                <div class="glass-card rounded-2xl p-6 border-2 border-gold-500/40 relative">
+                    <span class="absolute top-4 right-4 text-[10px] px-2.5 py-1 bg-gold-500 text-stone-950 font-bold rounded-full uppercase">Corporate HQ</span>
+                    <div class="w-10 h-10 rounded-lg bg-stone-800 text-gold-400 flex items-center justify-center mb-4">
+                        <i data-lucide="building" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-1">Telangana</h3>
+                    <p class="text-xs text-gold-400 mb-3 font-semibold">Hyderabad &amp; Secunderabad</p>
+                    <p class="text-xs text-stone-300 leading-relaxed mb-4">
+                        <strong>Address:</strong> WeWork, Krishe Emerald, Kondapur, Hyderabad - 500081
+                    </p>
+                    <p class="text-xs text-stone-400 leading-relaxed">
+                        Covers Gachibowli, Hitec City, Jubilee Hills, Banjara Hills, Tellapur, Kokapet, and Financial District.
+                    </p>
+                </div>
+
+                <!-- Location 2: Andhra Pradesh -->
+                <div class="glass-card rounded-2xl p-6 border border-stone-800">
+                    <div class="w-10 h-10 rounded-lg bg-stone-800 text-gold-400 flex items-center justify-center mb-4">
+                        <i data-lucide="waves" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-1">Andhra Pradesh</h3>
+                    <p class="text-xs text-gold-400 mb-3 font-semibold">Visakhapatnam &amp; Vijayawada</p>
+                    <p class="text-xs text-stone-300 leading-relaxed mb-4">
+                        Full site coordination teams serving coastal villas, Amaravati, Vizag Beach road, and luxury gated communities.
+                    </p>
+                    <p class="text-xs text-stone-400 leading-relaxed">
+                        Factory direct dispatch with zero transit damage guarantee.
+                    </p>
+                </div>
+
+                <!-- Location 3: Karnataka -->
+                <div class="glass-card rounded-2xl p-6 border border-stone-800">
+                    <div class="w-10 h-10 rounded-lg bg-stone-800 text-gold-400 flex items-center justify-center mb-4">
+                        <i data-lucide="laptop" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-1">Karnataka</h3>
+                    <p class="text-xs text-gold-400 mb-3 font-semibold">Bengaluru Metro Region</p>
+                    <p class="text-xs text-stone-300 leading-relaxed mb-4">
+                        Whitefield, Sarjapur, Electronic City, Indiranagar, and Hebbal tech-forward residential luxury homes and corporate pods.
+                    </p>
+                    <p class="text-xs text-stone-400 leading-relaxed">
+                        Dedicated on-site supervisors and milestone check-ins.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Lead Inquiry Section -->
+    <section id="contact" class="py-24 relative bg-stone-950 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Left Info Panel (5 cols) -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-xs font-semibold text-gold-500 uppercase tracking-widest">Connect With Us</span>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-2">Let's Design Your Dream Home</h2>
+                        <p class="text-stone-400 text-sm mt-3 leading-relaxed">
+                            Every inquiry triggers an instant dispatch to both <span class="text-stone-200 font-mono">info@flystoneinteriors.com</span> and our principal design desk at <span class="text-stone-200 font-mono">flystoneinteriors@gmail.com</span>.
+                        </p>
+                    </div>
+
+                    <!-- Contact Details Box -->
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-stone-900 border border-stone-800">
+                            <div class="p-3 rounded-lg bg-gold-500/10 text-gold-400 shrink-0">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-white">Experience Studio &amp; Office</h4>
+                                <p class="text-xs text-stone-300 mt-1 leading-relaxed">
+                                    WeWork, Krishe Emerald, Kondapur, Hyderabad, Telangana - 500081
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-stone-900 border border-stone-800">
+                            <div class="p-3 rounded-lg bg-gold-500/10 text-gold-400 shrink-0">
+                                <i data-lucide="phone-call" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-white">Direct Phone Numbers</h4>
+                                <div class="text-xs text-stone-300 mt-1 space-y-1">
+                                    <p>Mobile: <a href="tel:+919962458144" class="hover:text-gold-400 font-mono">+91 99624 58144</a></p>
+                                    <p>Mobile: <a href="tel:+919908732206" class="hover:text-gold-400 font-mono">+91 99087 32206</a></p>
+                                    <p>Landline: <a href="tel:04045175919" class="hover:text-gold-400 font-mono">040-45175919</a></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-stone-900 border border-stone-800">
+                            <div class="p-3 rounded-lg bg-gold-500/10 text-gold-400 shrink-0">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-white">Official Email Addresses</h4>
+                                <div class="text-xs text-stone-300 mt-1 space-y-1 font-mono">
+                                    <p><a href="mailto:info@flystoneinteriors.com" class="hover:text-gold-400">info@flystoneinteriors.com</a></p>
+                                    <p><a href="mailto:flystoneinteriors@gmail.com" class="hover:text-gold-400">flystoneinteriors@gmail.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct Social Channel Shortcuts -->
+                    <div>
+                        <p class="text-xs uppercase tracking-wider text-stone-400 font-semibold mb-3">Watch &amp; Follow</p>
+                        <div class="flex items-center gap-3">
+                            <a href="https://youtube.com/@flystoneinteriors?si=a5jMoUxCQW7ZdsVh" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-stone-900 hover:bg-red-950/40 border border-stone-800 hover:border-red-600/40 text-stone-300 hover:text-red-400 transition flex items-center gap-2 text-xs">
+                                <i data-lucide="youtube" class="w-4 h-4 text-red-500"></i> YouTube Channel
+                            </a>
+                            <a href="https://www.instagram.com/flystoneinteriors" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-stone-900 hover:bg-stone-800 border border-stone-800 hover:border-pink-500/40 text-stone-300 hover:text-pink-400 transition flex items-center gap-2 text-xs">
+                                <i data-lucide="instagram" class="w-4 h-4 text-pink-400"></i> @flystoneinteriors
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Form Card (7 cols) -->
+                <div class="lg:col-span-7">
+                    <div class="glass-card rounded-3xl p-7 sm:p-10 border border-stone-800">
+                        <div class="mb-6">
+                            <h3 class="font-serif text-2xl font-bold text-white">Request a Complimentary Consultation</h3>
+                            <p class="text-xs text-stone-400 mt-1">Our Senior Architect will respond within 4 business hours.</p>
+                        </div>
+
+                        <!-- Lead Form -->
+                        <form id="leadForm" onsubmit="handleInquirySubmit(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-stone-300 mb-1.5">Full Name *</label>
+                                    <input type="text" id="leadName" required placeholder="e.g. Ramesh Reddy" class="w-full bg-stone-900 border border-stone-800 rounded-xl px-4 py-3 text-sm text-stone-100 placeholder-stone-600 focus:outline-none focus:border-gold-500 transition">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-stone-300 mb-1.5">Phone Number *</label>
+                                    <div class="flex">
+                                        <span class="inline-flex items-center px-3 rounded-l-xl border border-r-0 border-stone-800 bg-stone-800 text-stone-400 text-xs">+91</span>
+                                        <input type="tel" id="leadPhone" required pattern="[0-9]{10}" placeholder="9876543210" class="w-full bg-stone-900 border border-stone-800 rounded-r-xl px-4 py-3 text-sm text-stone-100 placeholder-stone-600 focus:outline-none focus:border-gold-500 transition">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-stone-300 mb-1.5">Your Email *</label>
+                                    <input type="email" id="leadEmail" required placeholder="name@domain.com" class="w-full bg-stone-900 border border-stone-800 rounded-xl px-4 py-3 text-sm text-stone-100 placeholder-stone-600 focus:outline-none focus:border-gold-500 transition">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-stone-300 mb-1.5">Project Location / City *</label>
+                                    <select id="leadLocation" required class="w-full bg-stone-900 border border-stone-800 rounded-xl px-4 py-3 text-sm text-stone-100 focus:outline-none focus:border-gold-500 transition">
+                                        <option value="Hyderabad">Hyderabad (Kondapur / Gachibowli / Tellapur)</option>
+                                        <option value="Bengaluru">Bengaluru (Karnataka)</option>
+                                        <option value="Visakhapatnam">Visakhapatnam (Andhra Pradesh)</option>
+                                        <option value="Vijayawada">Vijayawada / Guntur (AP)</option>
+                                        <option value="Other">Other Region in TS / AP / KA</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-stone-300 mb-1.5">Property Type</label>
+                                    <select id="leadPropertyType" class="w-full bg-stone-900 border border-stone-800 rounded-xl px-4 py-3 text-sm text-stone-100 focus:outline-none focus:border-gold-500 transition">
+                                        <option value="2 BHK Apartment">2 BHK Apartment</option>
+                                        <option value="3 BHK Apartment">3 BHK Apartment</option>
+                                        <option value="4 BHK / Duplex">4 BHK / Duplex Penthouse</option>
+                                        <option value="Independent Villa">Independent Villa</option>
+                                        <option value="Commercial Office / Retail">Commercial Office / Retail</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-stone-300 mb-1.5">Expected Timeline</label>
+                                    <select id="leadTimeline" class="w-full bg-stone-900 border border-stone-800 rounded-xl px-4 py-3 text-sm text-stone-100 focus:outline-none focus:border-gold-500 transition">
+                                        <option value="Immediate (Within 15 days)">Immediate (Within 15 days)</option>
+                                        <option value="Next 1-2 Months">Next 1 - 2 Months</option>
+                                        <option value="Possession in 3+ Months">Possession in 3+ Months</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-stone-300 mb-1.5">Specific Requirements / Message</label>
+                                <textarea id="leadMessage" rows="3" placeholder="Tell us about your floor plan, preferred style (Modern, Minimalist, Classic), or estimated budget..." class="w-full bg-stone-900 border border-stone-800 rounded-xl px-4 py-3 text-sm text-stone-100 placeholder-stone-600 focus:outline-none focus:border-gold-500 transition"></textarea>
+                            </div>
+
+                            <div class="pt-2">
+                                <button type="submit" id="submitLeadBtn" class="w-full py-4 rounded-xl bg-gradient-to-r from-gold-600 via-gold-500 to-amber-400 hover:from-gold-500 hover:to-amber-300 text-stone-950 font-bold text-sm tracking-wide uppercase transition shadow-xl shadow-gold-500/20 flex items-center justify-center gap-2">
+                                    <i data-lucide="send" class="w-4 h-4"></i> Send Inquiry to Flystone Team
+                                </button>
+                            </div>
+                        </form>
+
+                        <!-- Feedback Toast Container inside card -->
+                        <div id="formSuccessToast" class="hidden mt-4 p-4 rounded-xl bg-emerald-950/60 border border-emerald-500/50 text-emerald-200 text-xs">
+                            <div class="flex items-center gap-2 font-bold mb-1">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i> Thank You! Your inquiry has been routed.
+                            </div>
+                            <p>An automated copy has been queued for <strong>info@flystoneinteriors.com</strong> and <strong>flystoneinteriors@gmail.com</strong>. Our senior consultant will call you shortly.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-950 border-t border-stone-800/80 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-stone-800/80">
+                <!-- Col 1 -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-stone-900 border border-gold-500/40 flex items-center justify-center text-gold-500">
+                            <i data-lucide="gem" class="w-4 h-4"></i>
+                        </div>
+                        <span class="font-serif text-xl font-bold tracking-wider text-white">FLYSTONE</span>
+                    </div>
+                    <p class="text-xs text-stone-400 leading-relaxed mb-4">
+                        Luxury Living, Thoughtfully Designed. Leading bespoke interior styling and turnkey execution company in Hyderabad, Bengaluru &amp; Coastal Andhra.
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <a href="https://youtube.com/@flystoneinteriors?si=a5jMoUxCQW7ZdsVh" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-stone-900 border border-stone-800 hover:border-red-500/40 flex items-center justify-center text-stone-400 hover:text-red-400 transition" aria-label="YouTube">
+                            <i data-lucide="youtube" class="w-4 h-4"></i>
+                        </a>
+                        <a href="https://www.instagram.com/flystoneinteriors" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-stone-900 border border-stone-800 hover:border-pink-500/40 flex items-center justify-center text-stone-400 hover:text-pink-400 transition" aria-label="Instagram">
+                            <i data-lucide="instagram" class="w-4 h-4"></i>
+                        </a>
+                        <a href="https://wa.me/919962458144" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-lg bg-stone-900 border border-stone-800 hover:border-emerald-500/40 flex items-center justify-center text-stone-400 hover:text-emerald-400 transition" aria-label="WhatsApp">
+                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="text-xs font-semibold uppercase tracking-wider text-white mb-4">Services</h4>
+                    <ul class="text-xs space-y-2.5 text-stone-400">
+                        <li><a href="#services" class="hover:text-gold-400 transition">Modular Kitchen Systems</a></li>
+                        <li><a href="#services" class="hover:text-gold-400 transition">Full Living Room Designing</a></li>
+                        <li><a href="#services" class="hover:text-gold-400 transition">Custom Wardrobes &amp; Walk-ins</a></li>
+                        <li><a href="#services" class="hover:text-gold-400 transition">Commercial &amp; Executive Pods</a></li>
+                        <li><a href="#services" class="hover:text-gold-400 transition">Architectural 3D Walkthroughs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="text-xs font-semibold uppercase tracking-wider text-white mb-4">Service Regions</h4>
+                    <ul class="text-xs space-y-2.5 text-stone-400">
+                        <li><span class="text-stone-300 font-semibold">Telangana:</span> Hyderabad, Secunderabad</li>
+                        <li><span class="text-stone-300 font-semibold">Andhra Pradesh:</span> Visakhapatnam, Vijayawada</li>
+                        <li><span class="text-stone-300 font-semibold">Karnataka:</span> Bengaluru Urban</li>
+                        <li class="pt-2"><a href="#estimator" class="text-gold-400 hover:underline">Instant Cost Calculator &rarr;</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="text-xs font-semibold uppercase tracking-wider text-white mb-4">Registered Office</h4>
+                    <p class="text-xs text-stone-400 leading-relaxed mb-3">
+                        WeWork, Krishe Emerald, Kondapur, Hyderabad - 500081, Telangana, India.
+                    </p>
+                    <p class="text-xs text-stone-300">
+                        Phones: <br>
+                        <a href="tel:+919962458144" class="hover:text-gold-400 font-mono">+91 99624 58144</a><br>
+                        <a href="tel:+919908732206" class="hover:text-gold-400 font-mono">+91 99087 32206</a><br>
+                        <a href="tel:04045175919" class="hover:text-gold-400 font-mono">040-45175919</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright & Azure Note -->
+            <div class="mt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
+                <p>&copy; <span id="currentYear"></span> Flystone Interiors. All rights reserved. Registered in India.</p>
+                <div class="flex items-center gap-4">
+                    <span class="inline-flex items-center gap-1.5 text-stone-400">
+                        <span class="w-2 h-2 rounded-full bg-sky-400"></span> Azure Static Web Apps Ready
+                    </span>
+                    <button onclick="openAdminModal()" class="text-stone-400 hover:text-gold-400 transition">Designer Login</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal for Gallery Preview -->
+    <div id="lightboxModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="relative max-w-4xl w-full bg-stone-950 border border-stone-800 rounded-2xl overflow-hidden shadow-2xl">
+            <button onclick="closeLightbox()" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-stone-900/80 text-white flex items-center justify-center hover:bg-stone-800 transition">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div class="relative aspect-video bg-black flex items-center justify-center">
+                <img id="lightboxImg" src="" alt="Full view" class="max-h-[75vh] w-full object-contain">
+            </div>
+            <div class="p-4 sm:p-6 bg-stone-900 border-t border-stone-800 flex items-center justify-between">
+                <div>
+                    <h3 id="lightboxTitle" class="font-serif text-lg font-bold text-white">Project Title</h3>
+                    <p id="lightboxMeta" class="text-xs text-gold-400 mt-0.5">Category • Location</p>
+                </div>
+                <a href="#contact" onclick="closeLightbox()" class="px-4 py-2 rounded-lg bg-gold-500 hover:bg-gold-400 text-stone-950 text-xs font-bold transition">
+                    Inquire For This Style
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Designer / Admin Portal Modal for Live Site Image Uploads -->
+    <div id="adminModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="relative max-w-lg w-full bg-stone-950 border border-gold-500/40 rounded-3xl p-6 sm:p-8 shadow-2xl">
+            <button onclick="closeAdminModal()" class="absolute top-5 right-5 text-stone-400 hover:text-white">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <div class="flex items-center gap-3 mb-6">
+                <div class="p-2.5 rounded-xl bg-gold-500/20 text-gold-400">
+                    <i data-lucide="upload-cloud" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="font-serif text-xl font-bold text-white">Flystone Site Upload Portal</h3>
+                    <p class="text-xs text-stone-400">Upload completed client site photos directly to public gallery</p>
+                </div>
+            </div>
+
+            <!-- Upload Form -->
+            <form id="projectUploadForm" onsubmit="handleProjectUpload(event)" class="space-y-4 text-xs">
+                <div>
+                    <label class="block font-semibold text-stone-300 mb-1">Project Name / Client Tag *</label>
+                    <input type="text" id="uploadTitle" required placeholder="e.g. Modern Minimalist Villa, Tellapur" class="w-full bg-stone-900 border border-stone-800 rounded-xl px-3.5 py-2.5 text-stone-100 focus:outline-none focus:border-gold-500">
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block font-semibold text-stone-300 mb-1">Category *</label>
+                        <select id="uploadCategory" required class="w-full bg-stone-900 border border-stone-800 rounded-xl px-3 py-2.5 text-stone-100 focus:outline-none focus:border-gold-500">
+                            <option value="Kitchen">Modular Kitchen</option>
+                            <option value="Living">Living &amp; Dining</option>
+                            <option value="Bedroom">Master Bedroom</option>
+                            <option value="Commercial">Commercial / Office</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-stone-300 mb-1">Location / State *</label>
+                        <select id="uploadLocation" required class="w-full bg-stone-900 border border-stone-800 rounded-xl px-3 py-2.5 text-stone-100 focus:outline-none focus:border-gold-500">
+                            <option value="Hyderabad, TS">Hyderabad, TS</option>
+                            <option value="Bengaluru, KA">Bengaluru, KA</option>
+                            <option value="Visakhapatnam, AP">Visakhapatnam, AP</option>
+                            <option value="Vijayawada, AP">Vijayawada, AP</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Choice: File Upload or Image URL -->
+                <div class="border-t border-stone-800 pt-3">
+                    <label class="block font-semibold text-stone-300 mb-1">Upload Local Image File</label>
+                    <input type="file" id="uploadFile" accept="image/*" onchange="previewSelectedFile(event)" class="w-full text-stone-400 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-stone-800 file:text-gold-400 hover:file:bg-stone-700 cursor-pointer">
+                </div>
+
+                <div class="relative flex py-1 items-center">
+                    <div class="flex-grow border-t border-stone-800"></div>
+                    <span class="flex-shrink mx-2 text-[10px] text-stone-500 uppercase">Or provide hosted image URL</span>
+                    <div class="flex-grow border-t border-stone-800"></div>
+                </div>
+
+                <div>
+                    <label class="block font-semibold text-stone-300 mb-1">Image URL</label>
+                    <input type="url" id="uploadUrl" placeholder="https://images.unsplash.com/photo-..." class="w-full bg-stone-900 border border-stone-800 rounded-xl px-3.5 py-2.5 text-stone-100 focus:outline-none focus:border-gold-500">
+                </div>
+
+                <!-- Image Preview Area -->
+                <div id="imagePreviewBox" class="hidden h-36 rounded-xl border border-stone-700 overflow-hidden relative">
+                    <img id="previewImg" src="" alt="Upload Preview" class="w-full h-full object-cover">
+                </div>
+
+                <div class="pt-3">
+                    <button type="submit" class="w-full py-3.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-stone-950 font-bold tracking-wider uppercase transition flex items-center justify-center gap-2">
+                        <i data-lucide="check" class="w-4 h-4"></i> Publish Image to Public Gallery
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Set dynamic year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile drawer toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('#mobileMenu a').forEach(item => {
+            item.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Initial default portfolio collection
+        const defaultProjects = [
+            {
+                id: 'p1',
+                title: 'Contemporary Island Kitchen with Acrylic Finish',
+                category: 'Kitchen',
+                location: 'Tellapur, Hyderabad (TS)',
+                image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=80'
+            },
+            {
+                id: 'p2',
+                title: 'Opulent Double-Height Living Room with Brass Inlays',
+                category: 'Living',
+                location: 'Jubilee Hills, Hyderabad (TS)',
+                image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=80'
+            },
+            {
+                id: 'p3',
+                title: 'Master Suite with Tinted Walk-in Wardrobe',
+                category: 'Bedroom',
+                location: 'Whitefield, Bengaluru (KA)',
+                image: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1000&q=80'
+            },
+            {
+                id: 'p4',
+                title: 'Minimalist Scandinavian Kitchen & Bar Counter',
+                category: 'Kitchen',
+                location: 'Beach Road, Visakhapatnam (AP)',
+                image: 'https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1000&q=80'
+            },
+            {
+                id: 'p5',
+                title: 'Executive Boardroom & Tech Workstation Hub',
+                category: 'Commercial',
+                location: 'Hitec City, Hyderabad (TS)',
+                image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80'
+            },
+            {
+                id: 'p6',
+                title: 'Luxury Dining Space with Italian Marble Finish',
+                category: 'Living',
+                location: 'Vijayawada, AP',
+                image: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?auto=format&fit=crop&w=1000&q=80'
+            }
+        ];
+
+        // Retrieve projects from local storage or load defaults
+        function getProjects() {
+            try {
+                const stored = localStorage.getItem('flystone_projects');
+                if (stored) {
+                    return JSON.parse(stored);
+                }
+            } catch (e) {
+                console.error("Local storage error:", e);
+            }
+            return defaultProjects;
+        }
+
+        // Save projects to local storage
+        function saveProjects(projects) {
+            try {
+                localStorage.setItem('flystone_projects', JSON.stringify(projects));
+            } catch (e) {
+                console.error("Error saving projects:", e);
+            }
+        }
+
+        let activeCategory = 'All';
+
+        // Render Gallery Items
+        function renderGallery() {
+            const grid = document.getElementById('galleryGrid');
+            const projects = getProjects();
+            grid.innerHTML = '';
+
+            const filtered = activeCategory === 'All' 
+                ? projects 
+                : projects.filter(p => p.category.toLowerCase() === activeCategory.toLowerCase());
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full py-12 text-center text-stone-500">
+                        <i data-lucide="image-off" class="w-10 h-10 mx-auto mb-2 text-stone-600"></i>
+                        <p>No project photographs under this category yet.</p>
+                    </div>
+                `;
+                lucide.createIcons();
+                return;
+            }
+
+            filtered.forEach(item => {
+                const card = document.createElement('div');
+                card.className = "group relative rounded-2xl overflow-hidden glass-card border border-stone-800 hover:border-gold-500/50 transition duration-500 cursor-pointer shadow-lg";
+                card.innerHTML = `
+                    <div class="aspect-[4/3] overflow-hidden bg-stone-900">
+                        <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-110 transition duration-700 ease-out" onerror="this.src='https://placehold.co/800x600/1c1917/d4af37?text=Flystone+Interior+Project'">
+                    </div>
+                    <div class="p-4 sm:p-5 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between text-[11px] mb-1.5">
+                                <span class="text-gold-400 font-semibold uppercase tracking-wider">${item.category}</span>
+                                <span class="text-stone-400 flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3 text-stone-500"></i> ${item.location}</span>
+                            </div>
+                            <h4 class="font-serif text-base font-bold text-white group-hover:text-gold-300 transition line-clamp-1">${item.title}</h4>
+                        </div>
+                    </div>
+                `;
+                card.addEventListener('click', () => {
+                    openLightbox(item.image, item.title, `${item.category} • ${item.location}`);
+                });
+                grid.appendChild(card);
+            });
+
+            // Re-render Lucide icons
+            lucide.createIcons();
+        }
+
+        // Filter functionality
+        function filterGallery(cat) {
+            activeCategory = cat;
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                if (btn.getAttribute('data-cat') === cat) {
+                    btn.className = "filter-btn active-filter px-5 py-2 rounded-full border border-gold-500 bg-gold-500 text-stone-950 font-bold transition whitespace-nowrap";
+                } else {
+                    btn.className = "filter-btn px-5 py-2 rounded-full border border-stone-800 bg-stone-900 text-stone-300 hover:border-gold-500/50 transition whitespace-nowrap";
+                }
+            });
+            renderGallery();
+        }
+
+        // Lightbox Handler
+        function openLightbox(src, title, meta) {
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('lightboxTitle').textContent = title;
+            document.getElementById('lightboxMeta').textContent = meta;
+            document.getElementById('lightboxModal').classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightboxModal').classList.add('hidden');
+        }
+
+        // Admin Modal Controls
+        function openAdminModal() {
+            document.getElementById('adminModal').classList.remove('hidden');
+        }
+
+        function closeAdminModal() {
+            document.getElementById('adminModal').classList.add('hidden');
+            document.getElementById('imagePreviewBox').classList.add('hidden');
+            document.getElementById('projectUploadForm').reset();
+            stagedDataUrl = null;
+        }
+
+        let stagedDataUrl = null;
+
+        // Preview local file converted to base64 DataURL
+        function previewSelectedFile(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    stagedDataUrl = e.target.result;
+                    document.getElementById('previewImg').src = stagedDataUrl;
+                    document.getElementById('imagePreviewBox').classList.remove('hidden');
+                    document.getElementById('uploadUrl').value = '';
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Handle Project Upload Form
+        function handleProjectUpload(e) {
+            e.preventDefault();
+            const title = document.getElementById('uploadTitle').value.trim();
+            const category = document.getElementById('uploadCategory').value;
+            const location = document.getElementById('uploadLocation').value;
+            const inputUrl = document.getElementById('uploadUrl').value.trim();
+
+            const finalImage = stagedDataUrl || inputUrl;
+
+            if (!finalImage) {
+                alert("Please select a file to upload or enter an image URL.");
+                return;
+            }
+
+            const newProject = {
+                id: 'p_' + Date.now(),
+                title: title,
+                category: category,
+                location: location,
+                image: finalImage
+            };
+
+            const projects = getProjects();
+            projects.unshift(newProject);
+            saveProjects(projects);
+
+            closeAdminModal();
+            filterGallery('All');
+            
+            // Scroll to gallery
+            document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Interactive Cost Estimator Logic
+        let selectedMultiplier = 1;
+        let selectedBhkName = '2BHK';
+
+        function selectConfig(name, mult) {
+            selectedBhkName = name;
+            selectedMultiplier = mult;
+
+            document.querySelectorAll('.config-btn').forEach(b => {
+                if (b.innerText.includes(name)) {
+                    b.className = "config-btn border border-gold-500 bg-gold-500/10 text-gold-400 p-3 rounded-xl font-medium text-center";
+                } else {
+                    b.className = "config-btn border border-stone-800 bg-stone-900 text-stone-300 p-3 rounded-xl font-medium text-center hover:border-stone-700";
+                }
+            });
+
+            document.getElementById('summaryConfig').textContent = name;
+            calculateBudget();
+        }
+
+        function calculateBudget() {
+            const tier = document.querySelector('input[name="finishTier"]:checked').value;
+            let baseLow = 4.8;
+            let baseHigh = 6.2;
+            let tierLabel = 'Flystone Classic (Essential)';
+
+            if (tier === 'premium') {
+                baseLow = 6.5;
+                baseHigh = 8.5;
+                tierLabel = 'Flystone Elite (BWP + Acrylic)';
+            } else if (tier === 'luxury') {
+                baseLow = 9.8;
+                baseHigh = 13.5;
+                tierLabel = 'Flystone Royal (Ultra Luxury)';
+            }
+
+            const lowResult = (baseLow * selectedMultiplier).toFixed(1);
+            const highResult = (baseHigh * selectedMultiplier).toFixed(1);
+
+            document.getElementById('estimateOutput').textContent = `₹${lowResult}L - ₹${highResult}L`;
+            document.getElementById('summaryTier').textContent = tierLabel;
+        }
+
+        function applyEstimateToInquiry() {
+            const tier = document.querySelector('input[name="finishTier"]:checked').value;
+            const city = document.getElementById('estimatorCity').value;
+            const estimate = document.getElementById('estimateOutput').textContent;
+            
+            // Prefill lead form
+            document.getElementById('leadLocation').value = city;
+            document.getElementById('leadMessage').value = `Auto-calculated Estimate: ${estimate} for ${selectedBhkName} (${tier} tier) in ${city}. Please share complete quotation and schedule design consultation.`;
+            
+            // Scroll to contact form
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Lead Inquiry Submission & Dispatch to info@ & flystoneinteriors@gmail.com
+        function handleInquirySubmit(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitLeadBtn');
+            const originalContent = btn.innerHTML;
+
+            btn.disabled = true;
+            btn.innerHTML = `<span class="animate-spin inline-block mr-2">&#9696;</span> Dispatching to Flystone Inbox...`;
+
+            const name = document.getElementById('leadName').value;
+            const phone = document.getElementById('leadPhone').value;
+            const email = document.getElementById('leadEmail').value;
+            const location = document.getElementById('leadLocation').value;
+            const property = document.getElementById('leadPropertyType').value;
+            const timeline = document.getElementById('leadTimeline').value;
+            const message = document.getElementById('leadMessage').value;
+
+            // Construct mailto backup link targeting both official addresses
+            const subject = encodeURIComponent(`New Interior Design Inquiry: ${name} (${location})`);
+            const body = encodeURIComponent(
+                `Full Name: ${name}\n` +
+                `Phone: +91 ${phone}\n` +
+                `Email: ${email}\n` +
+                `Location: ${location}\n` +
+                `Property Type: ${property}\n` +
+                `Timeline: ${timeline}\n\n` +
+                `Client Requirements:\n${message}\n\n` +
+                `---\nSubmitted via flystoneinteriors.com`
+            );
+
+            // Simulating API webhook send and opening client email handler
+            setTimeout(() => {
+                btn.disabled = false;
+                btn.innerHTML = originalContent;
+
+                document.getElementById('formSuccessToast').classList.remove('hidden');
+                
+                // Trigger mail client as fallback to both verified email addresses
+                const mailtoUrl = `mailto:info@flystoneinteriors.com,flystoneinteriors@gmail.com?subject=${subject}&body=${body}`;
+                window.location.href = mailtoUrl;
+
+                document.getElementById('leadForm').reset();
+            }, 800);
+        }
+
+        // Initialize on window load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderGallery();
+            calculateBudget();
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
